@@ -5,7 +5,7 @@ In this repository I implement logistic regression from scratch. I utilized skle
 
 As [IBM](https://www.ibm.com/topics/logistic-regression) puts it, 
 
-*"Logistic regression estimates the probability of an event occurring, such as voted or didn’t vote, based on a given dataset of independent variables. Since the outcome is a probability, the dependent variable is bounded between 0 and 1.This type of statistical model (also known as logit model) is often used for classification and predictive analytics."*
+*"Logistic regression estimates the probability of an event occurring, such as voted or didn’t vote, based on a given dataset of independent variables. Since the outcome is a probability, the dependent variable is bounded between 0 and 1. This type of statistical model (also known as logit model) is often used for classification and predictive analytics."*
 
 ## Data utilized
 The data utilized can be found [here](https://allisonhorst.github.io/palmerpenguins/), and the paper that was published along with the data can be found [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090081#s3).
