@@ -50,7 +50,8 @@ There are
     <br>
     q. Comments
 
-
+<br>
+I am using Logistic Regression to determine if each pengion is a Gentoo Penguin
 <br>
 
 ### Confusion Matrix
