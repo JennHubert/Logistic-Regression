@@ -1,13 +1,9 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
 from Class_Instance import LogisticRegression
 
-
-
-def normalize_dataframe(df): # Normalizes the values of a dataframe using the Min-Max scaling method.
-    df_normalized = (df - df.min()) / (df.max() - df.min()) # Normalizing
-    return df_normalized # Returns normalized df
 
 penguins = pd.read_csv('/Users/jenniferhubert/DSSA Spring 2023/Machine Learning/penguins.csv') # import data
 
@@ -17,10 +13,13 @@ df = df.dropna() # Get rid of nulls
 y = df.Species # Getting the y
 y = np.where(y == 'Gentoo penguin (Pygoscelis papua)', 1, 0) # Encoding
 df2 = df[['CulmenLength_mm', 'CulmenDepth_mm', 'FlipperLength_mm', 'BodyMass_g']] # the X values
-X = normalize_dataframe(df2) # Normalizing the X values
+X = df2 # the X values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Splitting data
-
+scaler = MinMaxScaler()
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
 model = LogisticRegression() # Turning it into a variable
 model.fit(X_train, y_train) # Trainging the model
 y_pred = model.predict(X_test) # Making predictions
